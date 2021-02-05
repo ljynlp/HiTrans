@@ -7,12 +7,9 @@ from models.Trans import TransformerEncoder
 class HiTrans(nn.Module):
     def __init__(self, hidden_dim, emotion_class_num, d_model, d_ff, heads, layers, dropout=0, input_max_length=512):
         super(HiTrans, self).__init__()
-        self.has_encoder = layers != 0
         self.input_max_length = input_max_length
         self.bert = BertModel.from_pretrained('bert-base-uncased')
-
-        if self.has_encoder:
-            self.encoder = TransformerEncoder(d_model, d_ff, heads, layers, 0.1)
+        self.encoder = TransformerEncoder(d_model, d_ff, heads, layers, 0.1)
 
         self.emo_output_layer = nn.Sequential(
             nn.Dropout(dropout),
