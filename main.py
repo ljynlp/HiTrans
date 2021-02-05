@@ -140,12 +140,12 @@ class Trainer(object):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--d_model', type=int, default=768, help='the max sequence length')
-    parser.add_argument('--d_ff', type=int, default=768, help='the max sequence length')
-    parser.add_argument('--heads', type=int, default=6, help='the hidden size of bert')
-    parser.add_argument('--layers', type=int, default=1, help='the hidden size of bert')
-    parser.add_argument('--input_max_length', type=int, default=512, help='the max sequence length')
-    parser.add_argument('--hidden_dim', type=int, default=768, help='the hidden size of bert')
+    parser.add_argument('--d_model', type=int, default=768)
+    parser.add_argument('--d_ff', type=int, default=768)
+    parser.add_argument('--heads', type=int, default=6)
+    parser.add_argument('--layers', type=int, default=1)
+    parser.add_argument('--input_max_length', type=int, default=512)
+    parser.add_argument('--hidden_dim', type=int, default=768)
     parser.add_argument('--dropout', type=float, default=0.5)
     parser.add_argument('--lr', type=float, default=5e-5)
     parser.add_argument('--bert_lr', type=float, default=1e-5)
